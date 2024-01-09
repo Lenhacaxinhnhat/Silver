@@ -1,10 +1,11 @@
+----------------------------------------------------------------------------------------------------------------------------------------------
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "NHACA HUB",
-    SubTitle = "Version 1.1",
+    Title = "Fai Fao Hub",
+    SubTitle = "Version 2",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = false,
@@ -12,18 +13,17 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main"}),
-    Sub = Window:AddTab({ Title = "Sub Farm"}),
-    Stats = Window:AddTab({ Title = "Stats"}),
-    Player = Window:AddTab({ Title = "Player"}),
-    Teleport = Window:AddTab({ Title = "Island"}),
-    Fruit = Window:AddTab({ Title = "Fruit"}),
-    Raid = Window:AddTab({ Title = "Raid"}),
-    Race = Window:AddTab({ Title = "Race V4"}),
-    Shop = Window:AddTab({ Title = "Shop"}),
-	Misc = Window:AddTab({ Title = "Misc"}),
-    Hop = Window:AddTab({ Title = "Hop"}),
+    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
+    Teleport = Window:AddTab({ Title = "Island", Icon = "palmtree" }),
+    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
+	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
+    Hop = Window:AddTab({ Title = "Hop", Icon = "wifi" }),
 }
 local Options = Fluent.Options
 do
@@ -2516,12 +2516,12 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     })
     DropdownDelayAttack:SetValue("Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackNHACA_Mode = Value
-	if _G.FastAttackNHACA_Mode == "Fast Attack" then
+    _G.FastAttackFaiFao_Mode = Value
+	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
 		_G.Fast_Delay = 0.17
-	elseif _G.FastAttackNHACA_Mode == "Normal Attack" then
+	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
 		_G.Fast_Delay = 0.25
-	elseif _G.FastAttackNHACA_Mode == "Super Fast Attack" then
+	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0.05
 	end
 end)
@@ -2722,7 +2722,7 @@ end)
       end)
 
 
-    local ToggleCastleRaid = Tabs.Sub:AddToggle("ToggleCastleRaid", {Title = "Auto Castle Raid | Pirates Castle", Default = false })
+    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Castle Raid | Pirates Castle", Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
@@ -2975,8 +2975,8 @@ end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Mastery
-local Mastery = Tabs.Sub:AddSection("Mastery Farm")
-    local DropdownMastery = Tabs.Sub:AddDropdown("DropdownMastery", {
+local Mastery = Tabs.Main:AddSection("Mastery Farm")
+    local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
         Title = "Mastery Mode",
         Values = {"Level","Near Mobs",},
         Multi = false,
@@ -2989,7 +2989,7 @@ local Mastery = Tabs.Sub:AddSection("Mastery Farm")
         TypeMastery = Value
     end)
 
-    local ToggleMasteryFruit = Tabs.Sub:AddToggle("ToggleMasteryFruit", {Title = "Auto Blox Fruit Mastery", Default = false })
+    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto BF Mastery", Default = false })
     ToggleMasteryFruit:OnChanged(function(Value)
         AutoFarmMasDevilFruit = Value
     end)
@@ -2997,7 +2997,7 @@ local Mastery = Tabs.Sub:AddSection("Mastery Farm")
 
  
 
-    local SliderHealt = Tabs.Sub:AddSlider("SliderHealt", {
+    local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
         Title = "Health (%) Mob",
         Description = "",
         Default = 25,
@@ -3154,6 +3154,8 @@ end)
 end
 end
 end)
+
+local MiscFarm = Tabs.Main:AddSection("Misc Farm")
 
 if Third_Sea then
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Bone", Default = false })
@@ -3338,19 +3340,19 @@ end
     end)
 end
 
-local boss = Tabs.Sub:AddSection("Boss Farm")
+local boss = Tabs.Main:AddSection("Boss Farm")
 
     if First_Sea then
-		tableBoss = {"The Gorilla King","Bobby","Yeti","Mob Leader","Vice Admiral","Warden","Chief Warden","Swan","Magma Admiral","Fishman Lord","Wysper","Thunder God","Cyborg","Saber Expert"}
+		tableBoss = {"DauCoGhe Raid Boss [Lv. 7000]","The Gorilla King","Bobby","Yeti","Mob Leader","Vice Admiral","Warden","Chief Warden","Swan","Magma Admiral","Fishman Lord","Wysper","Thunder God","Cyborg","Saber Expert"}
 	elseif Second_Sea then
-		tableBoss = {"Diamond","Jeremy","Fajita","Don Swan","Smoke Admiral","Cursed Captain","Darkbeard","Order","Awakened Ice Admiral","Tide Keeper"}
+		tableBoss = {"DauCoGhe Raid Boss [Lv. 8000]","Diamond","Jeremy","Fajita","Don Swan","Smoke Admiral","Cursed Captain","Darkbeard","Order","Awakened Ice Admiral","Tide Keeper"}
 	elseif Third_Sea then
-		tableBoss = {"Stone","Island Empress","Kilo Admiral","Captain Elephant","Beautiful Pirate","rip_indra True Form","Longma","Soul Reaper","Cake Queen"}
+		tableBoss = {"DauCoGhe Raid Boss [Lv. 9000]","Stone","Island Empress","Kilo Admiral","Captain Elephant","Beautiful Pirate","rip_indra True Form","Longma","Soul Reaper","Cake Queen"}
 	end
 
 
     local DropdownBoss = Tabs.Main:AddDropdown("DropdownBoss", {
-        Title = "Select Boss",
+        Title = "Dropdown",
         Values = tableBoss,
         Multi = false,
         Default = 1,
@@ -3438,7 +3440,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
     end)
 
 
-    local Material = Tabs.Sub:AddSection("Material Farm")
+    local Material = Tabs.Main:AddSection("Material Farm")
 
     if First_Sea then
         MaterialList = {
@@ -3465,7 +3467,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
         SelectMaterial = Value
     end)
 
-    local ToggleMaterial = Tabs.Sub:AddToggle("ToggleMaterial", {Title = "Auto Material", Default = false })
+    local ToggleMaterial = Tabs.Main:AddToggle("ToggleMaterial", {Title = "Auto Material", Default = false })
 
     ToggleMaterial:OnChanged(function(Value)
         _G.AutoMaterial = Value
@@ -4308,7 +4310,7 @@ end)
     end)
 end
 
-local Items = Tabs.Sub:AddSection("Items Farm")
+local Items = Tabs.Main:AddSection("Items Farm")
 
 if Third_Sea then
     local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Auto Hallow Scythe [Fully]", Default = false })
@@ -4584,17 +4586,17 @@ local SettingFarm = Tabs.Setting:AddSection("Setting Farming")
  local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = " Enable Fast Attack", Default = true })
 
     ToggleFastAttack:OnChanged(function(Value)
-     _G.FastAttackNHACA = Value
+     _G.FastAttackFaiFao = Value
     end)
     Options.ToggleFastAttack:SetValue(true)
 
 spawn(function()
 	while wait(0.4) do
 		pcall(function()
-			if _G.FastAttackNHACA then
+			if _G.FastAttackFaiFao then
 				repeat wait(_G.Fast_Delay)
 					AttackNoCD()
-				until not _G.FastAttackNHACA
+				until not _G.FastAttackFaiFao
 			end
 		end)
 	end
@@ -6934,7 +6936,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
             Hop()
             Fluent:Notify({
-                Title = "Full Moon",
+                Title = "Fai Fao Hub",
                 Content = "Turn Off Find Full Moon...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6942,7 +6944,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
             Hop()
             Fluent:Notify({
-                Title = "Hop Sever",
+                Title = "Fai Fao Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6950,7 +6952,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
             Hop()
             Fluent:Notify({
-                Title = "Hop Sever",
+                Title = "Fai Fao Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
