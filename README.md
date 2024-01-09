@@ -2976,7 +2976,7 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Mastery
 local Mastery = Tabs.Sub:AddSection("Mastery Farm")
-    local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
+    local DropdownMastery = Tabs.Sub:AddDropdown("DropdownMastery", {
         Title = "Mastery Mode",
         Values = {"Level","Near Mobs",},
         Multi = false,
@@ -2989,7 +2989,7 @@ local Mastery = Tabs.Sub:AddSection("Mastery Farm")
         TypeMastery = Value
     end)
 
-    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto BF Mastery", Default = false })
+    local ToggleMasteryFruit = Tabs.Sub:AddToggle("ToggleMasteryFruit", {Title = "Auto Blox Fruit Mastery", Default = false })
     ToggleMasteryFruit:OnChanged(function(Value)
         AutoFarmMasDevilFruit = Value
     end)
@@ -2997,7 +2997,7 @@ local Mastery = Tabs.Sub:AddSection("Mastery Farm")
 
  
 
-    local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
+    local SliderHealt = Tabs.Sub:AddSlider("SliderHealt", {
         Title = "Health (%) Mob",
         Description = "",
         Default = 25,
@@ -3349,7 +3349,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
 	end
 
 
-    local DropdownBoss = Tabs.Main:AddDropdown("DropdownBoss", {
+    local DropdownBoss = Tabs.Sub:AddDropdown("DropdownBoss", {
         Title = "Select Boss",
         Values = tableBoss,
         Multi = false,
@@ -3361,7 +3361,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
 		_G.SelectBoss = Value
     end)
 
-	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {Title = "Kill Boss", Default = false })
+	local ToggleAutoFarmBoss = Tabs.Sub:AddToggle("ToggleAutoFarmBoss", {Title = "Kill Boss", Default = false })
 
     ToggleAutoFarmBoss:OnChanged(function(Value)
 		_G.AutoBoss = Value
@@ -3452,7 +3452,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
         }
         end
 
-    local DropdownMaterial = Tabs.Main:AddDropdown("DropdownMaterial", {
+    local DropdownMaterial = Tabs.Sub:AddDropdown("DropdownMaterial", {
         Title = "Dropdown",
         Values = MaterialList,
         Multi = false,
