@@ -4368,7 +4368,7 @@ if Third_Sea then
            end)
         
            
-           local ToggleYama = Tabs.Main:AddToggle("ToggleYama", {Title = "Auto Get Yama", Default = false })
+           local ToggleYama = Tabs.Sub:AddToggle("ToggleYama", {Title = "Auto Get Yama", Default = false })
            ToggleYama:OnChanged(function(Value)
             _G.AutoYama = Value
            end)
