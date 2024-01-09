@@ -2515,12 +2515,12 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     })
     DropdownDelayAttack:SetValue("Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackFaiFao_Mode = Value
-	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
+    _G.FastAttackNHACA_Mode = Value
+	if _G.FastAttackNHACA_Mode == "Fast Attack" then
 		_G.Fast_Delay = 0.17
-	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
+	elseif _G.FastAttackNHACA_Mode == "Normal Attack" then
 		_G.Fast_Delay = 0.25
-	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
+	elseif _G.FastAttackNHACA_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0.05
 	end
 end)
@@ -4585,17 +4585,17 @@ local SettingFarm = Tabs.Setting:AddSection("Setting Farming")
  local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = " Enable Fast Attack", Default = true })
 
     ToggleFastAttack:OnChanged(function(Value)
-     _G.FastAttackFaiFao = Value
+     _G.FastAttackNHACA = Value
     end)
     Options.ToggleFastAttack:SetValue(true)
 
 spawn(function()
 	while wait(0.4) do
 		pcall(function()
-			if _G.FastAttackFaiFao then
+			if _G.FastAttackNHACA then
 				repeat wait(_G.Fast_Delay)
 					AttackNoCD()
-				until not _G.FastAttackFaiFao
+				until not _G.FastAttackNHACA
 			end
 		end)
 	end
@@ -6935,7 +6935,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "Full Moon",
                 Content = "Turn Off Find Full Moon...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6943,7 +6943,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "Hop Sever",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6951,7 +6951,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "Hop Sever",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
