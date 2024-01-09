@@ -3349,7 +3349,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
 	end
 
 
-    local DropdownBoss = Tabs.Sub:AddDropdown("DropdownBoss", {
+    local DropdownBoss = Tabs.Main:AddDropdown("DropdownBoss", {
         Title = "Select Boss",
         Values = tableBoss,
         Multi = false,
@@ -3361,7 +3361,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
 		_G.SelectBoss = Value
     end)
 
-	local ToggleAutoFarmBoss = Tabs.Sub:AddToggle("ToggleAutoFarmBoss", {Title = "Kill Boss", Default = false })
+	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {Title = "Kill Boss", Default = false })
 
     ToggleAutoFarmBoss:OnChanged(function(Value)
 		_G.AutoBoss = Value
@@ -3452,7 +3452,7 @@ local boss = Tabs.Sub:AddSection("Boss Farm")
         }
         end
 
-    local DropdownMaterial = Tabs.Sub:AddDropdown("DropdownMaterial", {
+    local DropdownMaterial = Tabs.Main:AddDropdown("DropdownMaterial", {
         Title = "Dropdown",
         Values = MaterialList,
         Multi = false,
@@ -4311,7 +4311,7 @@ end
 local Items = Tabs.Sub:AddSection("Items Farm")
 
 if Third_Sea then
-    local ToggleHallow = Tabs.Sub:AddToggle("ToggleHallow", {Title = "Auto Hallow Scythe [Fully]", Default = false })
+    local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Auto Hallow Scythe [Fully]", Default = false })
 
     ToggleHallow:OnChanged(function(Value)
         AutoHallowSycthe = Value
@@ -4368,7 +4368,7 @@ if Third_Sea then
            end)
         
            
-           local ToggleYama = Tabs.Sub:AddToggle("ToggleYama", {Title = "Auto Get Yama", Default = false })
+           local ToggleYama = Tabs.Main:AddToggle("ToggleYama", {Title = "Auto Get Yama", Default = false })
            ToggleYama:OnChanged(function(Value)
             _G.AutoYama = Value
            end)
@@ -4386,7 +4386,7 @@ if Third_Sea then
         end)
 
 
-        local ToggleTushita = Tabs.Sub:AddToggle("ToggleTushita", {Title = "Auto Tushita", Default = false })
+        local ToggleTushita = Tabs.Main:AddToggle("ToggleTushita", {Title = "Auto Tushita", Default = false })
         ToggleTushita:OnChanged(function(Value)
             AutoTushita = Value
         end)
@@ -4423,7 +4423,7 @@ if Third_Sea then
                    end)
 
 
-                   local ToggleHoly = Tabs.Sub:AddToggle("ToggleHoly", {Title = "Auto Holy Torch", Default = false })
+                   local ToggleHoly = Tabs.Main:AddToggle("ToggleHoly", {Title = "Auto Holy Torch", Default = false })
                    ToggleHoly:OnChanged(function(Value)
                     _G.Auto_Holy_Torch = Value
                    end)
@@ -4451,7 +4451,7 @@ if Third_Sea then
 
 
 if Second_Sea then
-        local ToggleFactory = Tabs.Sub:AddToggle("ToggleFactory", {Title = "Auto Farm Factory", Default = false })
+        local ToggleFactory = Tabs.Main:AddToggle("ToggleFactory", {Title = "Auto Farm Factory", Default = false })
         ToggleFactory:OnChanged(function(Value)
             _G.Factory = Value
         end)
@@ -4495,7 +4495,7 @@ if Second_Sea then
     end
 
         if Third_Sea then
-    local ToggleCakeV2 = Tabs.Sub:AddToggle("ToggleCakeV2", {Title = "Kill Dought King [Need Spawn]", Default = false })
+    local ToggleCakeV2 = Tabs.Main:AddToggle("ToggleCakeV2", {Title = "Kill Dought King [Need Spawn]", Default = false })
     ToggleCakeV2:OnChanged(function(Value)
         _G.AutoCakeV2 = Value
     end)
@@ -4535,7 +4535,7 @@ end
 
     
 if Second_Sea or Third_Sea then
-    local ToggleHakiColor = Tabs.Sub:AddToggle("ToggleHakiColor", {Title = "Buy Haki Color",Default = false })
+    local ToggleHakiColor = Tabs.Main:AddToggle("ToggleHakiColor", {Title = "Buy Haki Color",Default = false })
     ToggleHakiColor:OnChanged(function(Value)
         _G.Auto_Buy_Enchancement = Value
     end)
@@ -4554,7 +4554,7 @@ if Second_Sea or Third_Sea then
 end
 
 if Second_Sea then
-    local ToggleSwordLengend = Tabs.Sub:AddToggle("ToggleSwordLengend", {Title = "Buy Sword Lengendary",Default = false })
+    local ToggleSwordLengend = Tabs.Main:AddToggle("ToggleSwordLengend", {Title = "Buy Sword Lengendary",Default = false })
     ToggleSwordLengend:OnChanged(function(Value)
         _G.BuyLengendSword = Value
     end)
